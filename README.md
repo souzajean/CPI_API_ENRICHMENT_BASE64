@@ -140,7 +140,7 @@ Query: id=${property.id}
 
 <br>
 
-# 🔹 6. Content Modifier (Organização)
+# 🔹 6. Content Modifier (Get Payload)
 
 ### ➕ Adicionando o Content Modifier
 ![Fluxo](imagens/Screenshot_14.png)
@@ -155,17 +155,61 @@ Nome: cm_get_payload
 
 <br>
 
-### ⚙️ Configuração do Content Modifier
+### ⚙️ Configuração do Content Modifier 
 ![Fluxo](imagens/Screenshot_16.png)
 Message Body
-
 ```
 Type: Expression
 Body: ${body}
 ```
+# 🔹 7. Content Modifier (Prepare Payload)
+
+### ➕ Adicionando o Content Modifier
+![Fluxo](imagens/Screenshot_17.png)
+
+<br>
+
+### ⚙️ Configuração do Content Modifier
+
+General
+```
+Nome: cm_prepare_payload
+```
+
+Exchange Property
+```
+| Campo        | Valor            |
+| ------------ | ---------------- |
+| Name         | data             |
+| Source Type  | Expression       |
+| Source Value | ${body}          |
+| Data Type    | java.lang.String |
+```
+![Fluxo](imagens/Screenshot_18.png)
+
+<br>
 
 
-# 🔹 7. Groovy Script (ENCODER Base64)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 🔹 8. Groovy Script (ENCODER Base64)
 ```
 Nome: groovy_encode
 import com.sap.gateway.ip.core.customdev.util.Message
@@ -179,7 +223,7 @@ def Message processData(Message message) {
 }
 ```
 
-#🔹 8. Groovy Script (DECODER Base64)
+#🔹 9. Groovy Script (DECODER Base64)
 
 Nome: groovy_decode
 
@@ -195,7 +239,7 @@ def Message processData(Message message) {
 }
 ```
 
-# 🔹 9. Content Modifier (Simular Arquivo)
+# 🔹 10. Content Modifier (Simular Arquivo)
 Headers
 ```
 Content-Type: application/json
@@ -225,7 +269,7 @@ Message Body
 ```
 
 
-🎯 Resultado
+# 🔹 11.🎯 Resultado
 ```
 {
     "status": "success",
