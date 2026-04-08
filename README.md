@@ -141,8 +141,25 @@ Query: id=${property.id}
 <br>
 
 # 🔹 6. Content Modifier (Organização)
+
+### ➕ Adicionando o Content Modifier
+![Fluxo](imagens/Screenshot_14.png)
+
+<br>
+
+### 🏷️ Renomeando o Content Modifier
+![Fluxo](imagens/Screenshot_15.png)
 ```
 Nome: cm_get_payload
+```
+
+<br>
+
+### ⚙️ Configuração do Content Modifier
+![Fluxo](imagens/Screenshot_16.png)
+Message Body
+
+```
 Type: Expression
 Body: ${body}
 ```
