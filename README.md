@@ -100,11 +100,12 @@ Nome: cm_request
 ### ⚙️ Configuração do Content Modifier
 Exchange Property
 ```
-| Campo        | Valor    |
-| ------------ | -------- |
-| Name         | id       |
-| Source Type  | XPath    |
-| Source Value | /root/id |
+| Campo        | Valor            |
+| ------------ | ---------------- |
+| Name         | id               |
+| Source Type  | XPath            |
+| Source Value | /root/id         |
+| Data Type    | java.lang.String |
 ```
 ![Fluxo](imagens/Screenshot_9.png)
 
