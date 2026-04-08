@@ -189,29 +189,26 @@ Exchange Property
 
 <br>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # 🔹 8. Groovy Script (ENCODER Base64)
+
+### ➕ Adicionando o Adapter Groovy Script
+![Fluxo](imagens/Screenshot_19.png)
+
+<br>
+
+### 🏷️ Renomeando o Groovy Script
+![Fluxo](imagens/Screenshot_20.png)
 ```
 Nome: groovy_encode
+```
+### ➕ Adicionando o Groovy Script
+![Fluxo](imagens/Screenshot_21.png)
+```
+
+<br>
+
+### 💻 Código do Groovy Script
+```
 import com.sap.gateway.ip.core.customdev.util.Message
 import java.util.Base64
 
@@ -222,6 +219,8 @@ def Message processData(Message message) {
     return message
 }
 ```
+
+<br>
 
 #🔹 9. Groovy Script (DECODER Base64)
 
