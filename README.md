@@ -1,17 +1,17 @@
 # 🚀 CPI_API_ENRICHMENT_BASE64
 
-SAP BTP Integration Suite – iFlow de Enriquecimento + Base64
+## SAP BTP Integration Suite – iFlow de Enriquecimento + Base64
 
 🎯 🧩 Objetivo do iFlow
 
 Este iFlow tem como objetivo demonstrar um cenário de integração no SAP Integration Suite, realizando o consumo de uma API externa, o enriquecimento de dados e a manipulação do payload com codificação e decodificação em Base64, culminando na geração de uma resposta estruturada simulando um arquivo para download.
 
-🔗 Consumo de API externa
-🧠 Enriquecimento de dados
-⚙️ Manipulação de payload com Groovy
-🔐 Codificação e decodificação em Base64
-📄 Simulação de geração de arquivo
-🏗️ 🔧 Arquitetura do iFlow
+🔗 Consumo de API externa   
+🧠 Enriquecimento de dados   
+⚙️ Manipulação de payload com Groovy   
+🔐 Codificação e decodificação em Base64   
+📄 Simulação de geração de arquivo   
+🏗️ 🔧 Arquitetura do iFlow   
 
 ![Fluxo](imagens/capa-linkedin.png)
 
@@ -21,17 +21,13 @@ Este iFlow tem como objetivo demonstrar um cenário de integração no SAP Integ
 
 # 🏗️ 🔧 Arquitetura do iFlow
 
-🔄 Fluxo completo
-POSTMAN → HTTPS → Content Modifier → Request Reply →  
+<br><br>
 
+🔄 Fluxo completo   
 <br>
-
-
-Content Modifier → Groovy Encode → Groovy Decode →  
-
-<br>
-
-Content Modifier → Response Final <br>
+POSTMAN → HTTPS → Content Modifier → Request Reply →   
+Content Modifier → Groovy Encode → Groovy Decode →     
+Content Modifier → Response Final   
 
 <br><br>
 
