@@ -79,20 +79,39 @@ IF_ENRICHMENT_WITH_ENCODING
 ## 🔹 3. HTTPS Sender (Trigger)
 ```
 Endpoint: /api/enrichment
-Method: GET ou POST
 ```
 ![Fluxo](imagens/Screenshot_6.png)
 
-# 🔹 4. Content Modifier
+## 🔹 4. Content Modifier
+
+### ➕ Adicionando o Content Modifier
+![Fluxo](imagens/Screenshot_7.png)
+
+<br>
+
+### 🏷️ Renomeando o Content Modifier
+![Fluxo](imagens/Screenshot_8.png)
 ```
 Nome: cm_request
 ```
+
+<br>
+
+### ⚙️ Configuração do Content Modifier
 Exchange Property
+```
 | Campo        | Valor    |
 | ------------ | -------- |
 | Name         | id       |
 | Source Type  | XPath    |
 | Source Value | /root/id |
+```
+![Fluxo](imagens/Screenshot_9.png)
+
+<br>
+
+
+
 
 
 # 🔹 5. Request Reply (Chamada API)
