@@ -1,0 +1,175 @@
+# 🚀 CPI_API_ENRICHMENT_BASE64
+
+SAP BTP Integration Suite – iFlow de Enriquecimento + Base64
+
+🎯 🧩 Objetivo do iFlow
+
+Este iFlow tem como objetivo demonstrar um cenário completo de integração no SAP Integration Suite, incluindo:
+
+Consumo de API externa
+Enriquecimento de dados
+Manipulação de payload com Groovy
+Codificação e decodificação em Base64
+Simulação de geração de arquivo
+🏗️ 🔧 Arquitetura do iFlow
+
+Fluxo completo:
+POSTMAN → HTTPS → Content Modifier → Request Reply → 
+Content Modifier → Groovy Encode → Groovy Decode → 
+Content Modifier → Response Final
+
+
+# 🌐 🔹 1. POSTMAN
+Exemplo de Payload
+```
+<root>
+    <id>1</id>
+</root>
+```
+👉 Simula entrada externa (Postman ou sistema)
+
+
+# 🔹 2. HTTPS Sender (Trigger)
+```
+Endpoint: /api/enrichment
+Method: GET ou POST
+```
+
+# 🔹 3. Content Modifier
+```
+Nome: cm_request
+```
+Exchange Property
+| Campo        | Valor    |
+| ------------ | -------- |
+| Name         | id       |
+| Source Type  | XPath    |
+| Source Value | /root/id |
+
+
+# 🔹 4. Request Reply (Chamada API)
+```
+URL: https://jsonplaceholder.typicode.com/posts
+Query: id=${property.id}
+```
+
+# 🔹 5. Content Modifier (Organização)
+```
+Nome: cm_get_payload
+Type: Expression
+Body: ${body}
+```
+
+
+# 🔹 6. Groovy Script (ENCODER Base64)
+```
+Nome: groovy_encode
+import com.sap.gateway.ip.core.customdev.util.Message
+import java.util.Base64
+
+def Message processData(Message message) {
+    def body = message.getBody(String)
+    def encoded = Base64.encoder.encodeToString(body.getBytes("UTF-8"))
+    message.setBody(encoded)
+    return message
+}
+```
+
+#🔹 7. Groovy Script (DECODER Base64)
+
+Nome: groovy_decode
+
+```
+import com.sap.gateway.ip.core.customdev.util.Message
+import java.util.Base64
+
+def Message processData(Message message) {
+    def body = message.getBody(String)
+    def decoded = new String(Base64.decoder.decode(body), "UTF-8")
+    message.setBody(decoded)
+    return message
+}
+```
+
+# 🔹 8. Content Modifier (Simular Arquivo)
+Headers
+```
+Content-Type: application/json
+```
+
+🔹 9. Content Modifier Final
+
+Nome: CM_Build_Final_Response
+
+Message Header
+| Header              | Tipo     | Valor                                |
+| ------------------- | -------- | ------------------------------------ |
+| Content-Disposition | Constant | attachment; filename="response.json" |
+| Content-Type        | Constant | application/json                     |
+
+
+Message Body
+```
+{
+  "status": "success",
+  "message": "Arquivo gerado com sucesso",
+  "generatedAt": "${date:now:yyyy-MM-dd HH:mm:ss}",
+  "fileName": "response.json",
+  "content": ${body}
+}
+```
+
+
+🎯 Resultado
+```
+{
+    "status": "success",
+    "message": "Arquivo gerado com sucesso",
+    "generatedAt": "2026-04-06 18:50:32",
+    "fileName": "response.json",
+    "content": {
+        "source": "API",
+        "timestamp": "2026-04-06 18:50:32",
+        "data": [
+            {
+                "userId": 1,
+                "id": 1,
+                "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+                "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+            }
+        ]
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
