@@ -279,10 +279,6 @@ Message Header
 
 
 
-
-
-
-
 Message Body
 ```
 {
@@ -293,7 +289,9 @@ Message Body
   "content": ${body}
 }
 ```
+![Fluxo](imagens/Screenshot_29.png)
 
+<br>
 
 # 🔹 11.🎯 Resultado
 ```
@@ -316,6 +314,7 @@ Message Body
     }
 }
 ```
+![Fluxo](imagens/Screenshot_30.png)
 
 <br>
 <br>
