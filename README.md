@@ -142,6 +142,14 @@ Message Body
 }
 ```
 
+<br>
+<br>
+
+---
+
+## 📦 Exemplo prático – iFlow para baixar
+
+📦 [Download do iFlow – PKG_BASE64_ENCODE_DECODE](https://github.com/souzajean/ZPKG_BASE64_ENCODE_DECODE/raw/main/Package/IFL_CPI_Base64_EncodeDecode_Service.zip)
 
 
 
