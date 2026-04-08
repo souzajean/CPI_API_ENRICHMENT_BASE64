@@ -11,7 +11,6 @@ Este iFlow tem como objetivo demonstrar um cenário de integração no SAP Integ
 ⚙️ Manipulação de payload com Groovy   
 🔐 Codificação e decodificação em Base64   
 📄 Simulação de geração de arquivo   
-🏗️ 🔧 Arquitetura do iFlow   
 
 ![Fluxo](imagens/capa-linkedin.png)
 
@@ -31,9 +30,9 @@ Content Modifier → Response Final
 
 <br><br>
 
-# 🌐 🔹 1. POSTMAN
+## 🌐 🔹 1. POSTMAN
 
-📥 Exemplo de Payload
+### 📥 Exemplo de Payload
 ```
 <root>
     <id>1</id>
@@ -44,7 +43,7 @@ Content Modifier → Response Final
 <br>
 
 
-🔄 2. Fluxo da Integração
+## 🔄 2. Fluxo da Integração
 
 <br>
 
@@ -55,7 +54,7 @@ Content Modifier → Response Final
 
 ### 🏷️ Nome do Package
 ```
-ZPKG_BASE64_ENCODE_DECODE
+ZPKG_CPI_API_ENRICHMENT_BASE64
 ```
 ![Fluxo](imagens/Screenshot_2.png)
 
@@ -69,18 +68,20 @@ ZPKG_BASE64_ENCODE_DECODE
 ### 🏷️ Nome do iFlow
 ![Fluxo](imagens/Screenshot_4.png)
 ```
-IF_CPI_Base64_EncodeDecode_Service
+IF_ENRICHMENT_WITH_ENCODING
 ```
 <br>
 
+### ➕ Adicionando o Adapter
+![Fluxo](imagens/Screenshot_5.png)
 
 
-
-# 🔹 3. HTTPS Sender (Trigger)
+## 🔹 3. HTTPS Sender (Trigger)
 ```
 Endpoint: /api/enrichment
 Method: GET ou POST
 ```
+![Fluxo](imagens/Screenshot_6.png)
 
 # 🔹 4. Content Modifier
 ```
