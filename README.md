@@ -22,14 +22,6 @@ Este iFlow tem como objetivo demonstrar um cenário de integração no SAP Integ
 
 <br><br>
 
-🔄 Fluxo completo   
-<br>
-POSTMAN → HTTPS → Content Modifier → Request Reply →   
-Content Modifier → Groovy Encode → Groovy Decode →     
-Content Modifier → Response Final   
-
-<br><br>
-
 # 🌐 🔹 1. POSTMAN
 
 ### 📥 Exemplo de Payload
