@@ -217,14 +217,29 @@ def Message processData(Message message) {
     message.setBody(encoded)
     return message
 }
-```
+![Fluxo](imagens/Screenshot_22.png)
 
 <br>
 
 # 🔹 9. Groovy Script (DECODER Base64)
 
-Nome: groovy_decode
+### ➕ Adicionando o Adapter Groovy Script
+![Fluxo](imagens/Screenshot_23.png)
 
+<br>
+
+### 🏷️ Renomeando o Groovy Script
+![Fluxo](imagens/Screenshot_24.png)
+```
+Nome: groovy_decode
+```
+
+### ➕ Adicionando o Groovy Script
+![Fluxo](imagens/Screenshot_25.png)
+
+<br>
+
+### 💻 Código do Groovy Script
 ```
 import com.sap.gateway.ip.core.customdev.util.Message
 import java.util.Base64
@@ -236,22 +251,34 @@ def Message processData(Message message) {
     return message
 }
 ```
+![Fluxo](imagens/Screenshot_26.png)
+
+<br>
 
 # 🔹 10. Content Modifier (Simular Arquivo)
-Headers
-```
-Content-Type: application/json
-```
 
-#🔹 9. Content Modifier Final
+### ➕ Adicionando o Content Modifier
+![Fluxo](imagens/Screenshot_27.png)
 
+<br>
+
+### ⚙️ Configuração do Content Modifier
+![Fluxo](imagens/Screenshot_28.png)
+
+General
+```
 Nome: CM_Build_Final_Response
+```
 
 Message Header
 | Header              | Tipo     | Valor                                |
 | ------------------- | -------- | ------------------------------------ |
 | Content-Disposition | Constant | attachment; filename="response.json" |
 | Content-Type        | Constant | application/json                     |
+
+
+
+
 
 
 
@@ -296,35 +323,4 @@ Message Body
 
 ## 📦 Exemplo prático – iFlow para baixar
 
-📦 [Download do iFlow – PKG_BASE64_ENCODE_DECODE](https://github.com/souzajean/ZPKG_BASE64_ENCODE_DECODE/raw/main/Package/IFL_CPI_Base64_EncodeDecode_Service.zip)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+📦 [Download do iFlow – CPI_API_ENRICHMENT_BASE64](https://github.com/souzajean/CPI_API_ENRICHMENT_BASE64/raw/main/Package/IF_ENRICHMENT_WITH_ENCODING.zip)
