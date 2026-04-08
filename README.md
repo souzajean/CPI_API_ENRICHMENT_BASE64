@@ -13,17 +13,32 @@ Este iFlow tem como objetivo demonstrar um cenário de integração no SAP Integ
 📄 Simulação de geração de arquivo
 🏗️ 🔧 Arquitetura do iFlow
 
+![Fluxo](imagens/capa-linkedin.png)
+
+---
+
+<br>
 
 # 🏗️ 🔧 Arquitetura do iFlow
 
 🔄 Fluxo completo
-POSTMAN → HTTPS → Content Modifier → Request Reply → 
-Content Modifier → Groovy Encode → Groovy Decode → 
-Content Modifier → Response Final
+POSTMAN → HTTPS → Content Modifier → Request Reply →  
 
+<br>
+
+
+Content Modifier → Groovy Encode → Groovy Decode →  
+
+<br>
+
+Content Modifier → Response Final <br>
+
+<br><br>
 
 # 🌐 🔹 1. POSTMAN
-📥 Exemplo de Payload```
+
+📥 Exemplo de Payload
+```
 <root>
     <id>1</id>
 </root>
