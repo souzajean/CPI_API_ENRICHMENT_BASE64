@@ -30,7 +30,7 @@ Content Modifier → Response Final
 
 <br><br>
 
-## 🌐 🔹 1. POSTMAN
+# 🌐 🔹 1. POSTMAN
 
 ### 📥 Exemplo de Payload
 ```
@@ -43,7 +43,7 @@ Content Modifier → Response Final
 <br>
 
 
-## 🔄 2. Fluxo da Integração
+# 🔄 2. Fluxo da Integração
 
 <br>
 
@@ -76,13 +76,13 @@ IF_ENRICHMENT_WITH_ENCODING
 ![Fluxo](imagens/Screenshot_5.png)
 
 
-## 🔹 3. HTTPS Sender (Trigger)
+# 🔹 3. HTTPS Sender (Trigger)
 ```
 Endpoint: /api/enrichment
 ```
 ![Fluxo](imagens/Screenshot_6.png)
 
-## 🔹 4. Content Modifier
+# 🔹 4. Content Modifier
 
 ### ➕ Adicionando o Content Modifier
 ![Fluxo](imagens/Screenshot_7.png)
@@ -111,15 +111,34 @@ Exchange Property
 
 <br>
 
-
-
-
-
 # 🔹 5. Request Reply (Chamada API)
+
+### ➕ Adicionando Request Reply
+![Fluxo](imagens/Screenshot_10.png)
+
+<br>
+
+### 🏷️ Renomeando o Request Reply
+![Fluxo](imagens/Screenshot_11.png)
+```
+Nome: API_jsonplaceholder
+```
+
+<br>
+
+### ➕ Adicionando o Adapter
+![Fluxo](imagens/Screenshot_12.png)
+
+<br>
+
+### ⚙️ Configuração do Request Reply
 ```
 URL: https://jsonplaceholder.typicode.com/posts
 Query: id=${property.id}
 ```
+![Fluxo](imagens/Screenshot_13.png)
+
+<br>
 
 # 🔹 6. Content Modifier (Organização)
 ```
@@ -174,6 +193,7 @@ Message Header
 | ------------------- | -------- | ------------------------------------ |
 | Content-Disposition | Constant | attachment; filename="response.json" |
 | Content-Type        | Constant | application/json                     |
+
 
 
 Message Body
