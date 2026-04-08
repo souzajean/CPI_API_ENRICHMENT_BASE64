@@ -203,7 +203,6 @@ Nome: groovy_encode
 ```
 ### ➕ Adicionando o Groovy Script
 ![Fluxo](imagens/Screenshot_21.png)
-```
 
 <br>
 
