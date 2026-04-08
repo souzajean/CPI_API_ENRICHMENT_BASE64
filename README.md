@@ -28,14 +28,48 @@ Exemplo de Payload
 ```
 👉 Simula entrada externa (Postman ou sistema)
 
+<br>
 
-# 🔹 2. HTTPS Sender (Trigger)
+
+## 🔄 1. Fluxo da Integração
+
+<br>
+
+### 🧱 Criando o Package
+![Fluxo](imagens/Screenshot_1.png)
+
+<br><br>
+
+### 🏷️ Nome do Package
+```
+ZPKG_BASE64_ENCODE_DECODE
+```
+![Fluxo](imagens/Screenshot_2.png)
+
+<br>
+
+### ➕ Adicionando o Artefato
+![Fluxo](imagens/Screenshot_3.png)
+
+<br>
+
+### 🏷️ Nome do iFlow
+![Fluxo](imagens/Screenshot_4.png)
+```
+IF_CPI_Base64_EncodeDecode_Service
+```
+<br>
+
+
+
+
+# 🔹 3. HTTPS Sender (Trigger)
 ```
 Endpoint: /api/enrichment
 Method: GET ou POST
 ```
 
-# 🔹 3. Content Modifier
+# 🔹 4. Content Modifier
 ```
 Nome: cm_request
 ```
@@ -47,13 +81,13 @@ Exchange Property
 | Source Value | /root/id |
 
 
-# 🔹 4. Request Reply (Chamada API)
+# 🔹 5. Request Reply (Chamada API)
 ```
 URL: https://jsonplaceholder.typicode.com/posts
 Query: id=${property.id}
 ```
 
-# 🔹 5. Content Modifier (Organização)
+# 🔹 6. Content Modifier (Organização)
 ```
 Nome: cm_get_payload
 Type: Expression
@@ -61,7 +95,7 @@ Body: ${body}
 ```
 
 
-# 🔹 6. Groovy Script (ENCODER Base64)
+# 🔹 7. Groovy Script (ENCODER Base64)
 ```
 Nome: groovy_encode
 import com.sap.gateway.ip.core.customdev.util.Message
@@ -75,7 +109,7 @@ def Message processData(Message message) {
 }
 ```
 
-#🔹 7. Groovy Script (DECODER Base64)
+#🔹 8. Groovy Script (DECODER Base64)
 
 Nome: groovy_decode
 
@@ -91,7 +125,7 @@ def Message processData(Message message) {
 }
 ```
 
-# 🔹 8. Content Modifier (Simular Arquivo)
+# 🔹 9. Content Modifier (Simular Arquivo)
 Headers
 ```
 Content-Type: application/json
