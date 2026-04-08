@@ -221,7 +221,7 @@ def Message processData(Message message) {
 
 <br>
 
-#🔹 9. Groovy Script (DECODER Base64)
+# 🔹 9. Groovy Script (DECODER Base64)
 
 Nome: groovy_decode
 
