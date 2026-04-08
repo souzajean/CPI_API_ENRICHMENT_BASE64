@@ -217,6 +217,7 @@ def Message processData(Message message) {
     message.setBody(encoded)
     return message
 }
+```
 ![Fluxo](imagens/Screenshot_22.png)
 
 <br>
